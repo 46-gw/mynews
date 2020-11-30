@@ -27,3 +27,10 @@ public function add()
         return redirect('admin/profile/edit');
     }
 }
+
+Route::group(['prefix' => 'admin'], function() {
+//  課題３
+    Route::get('XXX', 'AAAController@bbb');
+//  課題４
+    Route::get('news/create', 'Admin\ProfileController@edit');
+});
