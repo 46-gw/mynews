@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('news/create', 'Admin\NewsController@add');
+    Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
 });
 
 
@@ -24,9 +24,17 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('profile/edit','Admin\ProfileController@edit');
 });
 
+//  リダイレクト
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('profile/create', 'Admin\ProfileController@add')->middleware('auth');
+    Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
+});
 
 //  ０９課題３
 // Route::get('XXX', 'AAAController@bbb');
 
 //  ０９課題４
 // Route::get('news/create', 'Admin\ProfileController@edit');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
