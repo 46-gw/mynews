@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.profile')
 @section('title', 'プロフィール作成')
 
 @section('content')
@@ -24,9 +24,9 @@
                     <div class="form-group row">
                         <label class="col-md-2">性別</label>
                         <div class="col-md-10">
-                            <label><input type="radio" name="gender" value="{{ old('male') }}" checked>男性</label>
-　　　　　　　　　　　　　　<label><input type="radio" name="gender" value="{{ old('female') }}" checked>女性</label>
-　　　　　　　　　　　　　　<label><input type="radio" name="gender" value="{{ old('etc') }}">その他</label>
+                            <label><input type="radio" name="gender" value="male">男性</label>
+　　　　　　　　　　　　　　<label><input type="radio" name="gender" value="female">女性</label>
+　　　　　　　　　　　　　　<label><input type="radio" name="gender" value="etc">その他</label>
                     
                         </div>
                     </div>

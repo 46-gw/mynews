@@ -4,11 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Profile extends Model
 {
     protected $guarded = array('id');
+    
+protected $table = 'profiles';
 
-    // 以下を追記
     public static $rules = array(
         'name' => 'required',
         'gender' => 'required',
