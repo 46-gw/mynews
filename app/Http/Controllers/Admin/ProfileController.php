@@ -60,6 +60,8 @@ class ProfileController extends Controller
       $this->validate($request, Profiles::$rules);
       // Profile Modelからデータを取得する
       $profile = Profile::find($request->id);
+      $profile_form = $request->all();
+      
       unset($profile_form['remove']);
       unset($profile_form['_token']);
       // 該当するデータを上書きして保存する
@@ -70,6 +72,7 @@ class ProfileController extends Controller
         $history->edited_at = Carbon::now();
         $history->save();
       return redirect('admin/profile/');
+      
   }
   
   public function delete(Request $request)
