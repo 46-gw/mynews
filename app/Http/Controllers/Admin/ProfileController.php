@@ -57,7 +57,7 @@ class ProfileController extends Controller
      public function update(Request $request)
   {
       // Validationをかける
-      $this->validate($request, Profiles::$rules);
+      $this->validate($request, Profile::$rules);
       // Profile Modelからデータを取得する
       $profile = Profile::find($request->id);
       $profile_form = $request->all();
@@ -84,7 +84,6 @@ class ProfileController extends Controller
 
   }
 }
-
     
     
     

@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('title', 'プロフィールの編集')
-
 @section('content')
     <div class="container">
         <div class="row">
@@ -20,12 +19,12 @@
                             <input type="text" class="form-control" name="name" value="{{ $profile_form->name }}">
                         </div>
                     </div>
-                     <div class="form-group row">
+                    <div class="form-group row">
                         <label class="col-md-2" for="gender">性別</label>
                         <div class="col-md-10">
-                          <input type="radio" name="gender" value="male" {{ $profile_form->gender == "male" ? 'checked="checked"' : ''}}>男性
-                    <input type="radio" name="gender" value="female" {{ $profile_form->gender == "female" ? 'checked="checked"' : ''}}>女性
-                         <input type="radio" name="gender" value="etc" {{ $profile_form->gender == "etc" ? 'checked="checked"' : ''}}>その他
+                          　<input type="radio" name="gender" value="male" {{ $profile_form->gender == "male" ? 'checked="checked"' : ''}}>男性
+                    　　　　<input type="radio" name="gender" value="female" {{ $profile_form->gender == "female" ? 'checked="checked"' : ''}}>女性
+                          　<input type="radio" name="gender" value="etc" {{ $profile_form->gender == "etc" ? 'checked="checked"' : ''}}>その他
                         </div>
                     </div>
                      <div class="form-group row">
@@ -38,8 +37,6 @@
                         <label class="col-md-2" for="introduction">自己紹介欄</label>
                         <div class="col-md-10">
                             <textarea class="form-control" name="introduction" rows="20">{{ $profile_form->introduction }}</textarea>
-                        </div>
-                    </div>
                         </div>
                     </div>
                     <div class="form-group row">
@@ -60,10 +57,10 @@
                           <li class="list-group-item">{{ $history->edited_at }}</li>
                                 @endforeach
                             @endif
-            </ul>
+                        </ul>
                     </div>
                 </div>
-            </div>
-        </div>
+　　</div>
+    </div>
     </div>
 @endsection
